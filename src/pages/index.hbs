@@ -14,10 +14,10 @@
     
     <!-- this is the start of content -->
     <h1>
-      {{ quote }}
+      {{ quote.quote }}
     </h1>
     
-    {{!--
+    {{!-- 
     <ul>
         {{#each quotes}}
           <li>{{this}}</li>
@@ -27,7 +27,12 @@
   
     
     <p>
-      The above is a random "big talk" style quote or question.
+      The above is a random "big talk" style quote or question. It was selected randomly 
+      from a list of ~{{ quote.totalOptions }} options that I gathered up from around the web.
+    </p>
+    
+    <p>
+      You can see the code, the full list of questions, and more by <a href="https://glitch.com/edit/#!/aquamarine-marsh-link">remixing this project on Glitch</a>.
     </p>
         
   </body>

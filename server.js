@@ -75,13 +75,13 @@ const quotesFileContent = function() {
 /**
  * Retreive a random quote from the quotes.txt file.
  *
- * 
+ * Returns an object that also contains the total number of
+ * possible selections. Just for fun.
  */
 const randomQuote = function() {
   const quotes = quotesFileContent()
   const randomNumber = Math.floor(Math.random() * quotes.length)
   const randomSelection = quotes[randomNumber]
-  
-  console.log(quotes.length)
-  return randomSelection
+    
+  return { quote: randomSelection, totalOptions: quotes.length }
 }
