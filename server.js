@@ -66,8 +66,17 @@ fastify.listen(process.env.PORT, function(err, address) {
  * Therefore, we just don't return any lines that start with a bracket. 
  * Because no legitimate quote/question will start with one anyway. 👍🏻
  */
-const quotesFileContent = function() {
-  
-  const quotes = fs.readFileSync('src/quotes.txt', 'utf8').toString().split('\n').map( (item) => { if (item) });
+const quotesFileContent = function() {  
+  const quotes = fs.readFileSync('src/quotes.txt', 'utf8').toString().split('\n').filter( (item) => { return (item.charAt(0) != '[') });
   return quotes
+}
+
+/**
+ * Retreive a random quote from the quotes.txt file.
+ *
+ * 
+ */
+const randomQuote = function() {
+  const quotes = quotesFileContent()
+  const randomSelection = quotes[Math.floor(Math.random() * months.length);
 }
