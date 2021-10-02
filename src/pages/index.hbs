@@ -16,6 +16,15 @@
     <h1>
       {{ greeting }}
     </h1>
+    
+    <ul>
+        {{#each quotes}}
+          <li>{{this}}</li>
+        {{/each}}
+    </ul>
+    
+    
+    
     <p>
       This starter gives you everything you need to start working on a new
       project using Node. If you're looking for something a little more 
