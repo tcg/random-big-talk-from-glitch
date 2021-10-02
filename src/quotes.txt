@@ -1,4 +1,8 @@
-[source: https://lostyogi.com/big-talk-deep-conversations/]
+# README: You can put quotes into sections by using this comment style. 
+# Blank lines and lines that start with '#' 
+# will be ignored when selecting random quotes. 
+
+# source: https://lostyogi.com/big-talk-deep-conversations/]
 What is the most heartwarming thing you’ve ever seen?
 Where do you find peace?
 What is the farthest you’ve ever been from home?

@@ -29,7 +29,8 @@ fastify.get("/", function(request, reply) {
   // params is an object we'll pass to our handlebars template
   let params = {
     greeting: "Hello Node!", 
-    quotes: quotesFileContent()
+    // quotes: quotesFileContent(), 
+    quote: randomQuote(),
   };
   // request.query.paramName <-- a querystring example
   reply.view("/src/pages/index.hbs", params);
@@ -67,7 +68,7 @@ fastify.listen(process.env.PORT, function(err, address) {
  * Because no legitimate quote/question will start with one anyway. 👍🏻
  */
 const quotesFileContent = function() {  
-  const quotes = fs.readFileSync('src/quotes.txt', 'utf8').toString().split('\n').filter( (item) => { return (item.charAt(0) != '[') });
+  const quotes = fs.readFileSync('src/quotes.txt', 'utf8').toString().split('\n').filter( (item) => { return (item.toString().trim() != '' && item.charAt(0) != '#') });
   return quotes
 }
 
@@ -78,5 +79,9 @@ const quotesFileContent = function() {
  */
 const randomQuote = function() {
   const quotes = quotesFileContent()
-  const randomSelection = quotes[Math.floor(Math.random() * months.length);
+  const randomNumber = Math.floor(Math.random() * quotes.length)
+  const randomSelection = quotes[randomNumber]
+  
+  console.log(quotes.length)
+  return randomSelection
 }
